@@ -32,7 +32,7 @@ schools[1] = "UNIZIK";
 schools.push('IMT');
 
 //Let's create an Object
-const school = {Name:"Futo", Location:"Owerri", Color:"Green"};
+// const school = {Name:"Futo", Location:"Owerri", Color:"Green"};
 
 //To change a property
 school.Color = "White";
@@ -48,3 +48,4 @@ function topct(x) {
     return (x/100) * 430;
 }
 //You can use a function value directly as an object
+//If you call a name and you want it to be in uppercase, you can add .toUpperCase()

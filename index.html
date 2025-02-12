@@ -26,11 +26,48 @@
         <p id="trial"></p>
         
         <p id="test"></p>
+       
         <script>
             let answer = topct(20)
             document.getElementById('test').innerHTML = answer;
         </script>
 
+        <p id="display"></p>
+        <script>
+            //Here is a way to display an objects data without calling everything out individually
+            // Create an object
+            const school = {
+              name: "Futo", 
+              location: "Owerri", 
+              color: "Green"
+            };
+
+            // Create an array
+             const myArray = Object.values(school);
+
+             //Display the array
+             document.getElementById("display").innerHTML = myArray;
+        </script>
+
+
+        <p id="demo"></p>
+
+        <script>
+        // Create an Object
+        const person = {
+          name: "John",
+          age: 30,
+          city: "New York"
+        };
+        
+        // Create an Array
+        const myray = Object.values(person);
+        
+        // Display the Array
+        document.getElementById("demo").innerHTML = myray;
+
+        //These data can be displayed by calling JSON.stringify(name of the object)
+        </script>
     </div>
 </body>
 </html>
