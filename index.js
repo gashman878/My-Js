@@ -39,3 +39,12 @@ school.Color = "White";
 
 //To add a property
 school.Nationality = "Nigeria";
+
+//Using typeof to get the type of data you have.
+//Just call 'typeof' followed by the data you have, it will return the data type
+
+//Let's create a function and randomly use it.
+function topct(x) {
+    return (x/100) * 430;
+}
+//You can use a function value directly as an object
