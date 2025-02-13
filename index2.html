@@ -24,6 +24,8 @@
 
         <p id="demo"></p>
         <p id="onsss"></p>
+        <p id="char"></p>
+        <p id="iwi"></p>
         <script>
             let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             document.getElementById("demo").innerHTML = text;
@@ -32,6 +34,23 @@
             let testss = "Let\'s see if this quote will be there \"for us\"";
             document.getElementById('onsss').innerHTML = testss;//Correct
 
+            //You can use .charAt() to get the position of any alphabet in a string
+            document.getElementById('char').innerHTML = testss.charAt(16);//It returned s as the 16th alphabet
+
+            //You can replace the .charAt() with just .at()
+            //You can also use .[], just put the number of the alphabet inside
+
+
+            //Now let's check for ways you can pull out morethan an alphabet or a letter from a string.
+            document.getElementById('iwi').innerHTML = testss.slice(9,12);
+            //You can also use substring(); just add the values inside
+            //You can aslo use substr(); in this case, the second value is how many digits it will count starting from the first oene
+            //Use .toUpperCase() to concvert a string to uppercase and .toLowerCase for viceversa
+            //trim() can br used to cut out empty spaces. There is endtrim(), you already know what it means
+            //padStart() adds zeros or any figure to a string or number. There is padEnd(), you know
+            //repear() can repeat a string a number of specified times.
+            //replace() pull a string data and changes it
+            //replaceall(), you already know what it does.
         </script>
     </div>
 </body>
