@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Practice</title>
+    <script src="index2.js"></script>
+</head>
+<body>
+    <div>
+        <h1>You can add a Js function to it's own element where it was triggered</h1>
+        <button type="button" onclick="this.innerHTML = Date()">The Date is ?</button>
+        <h2>Another way of doing it is by adding the id to the button</h2>
+        <button type="button" onclick="ctime()" id="ctime">The date is ?</button>
+        <p onmouseover="this.style.backgroundColor='red'" onmouseleave="this.style.backgroundColor='white'">
+            This should change color if mouse hovers on it
+        </p>
+        <p id="demos"></p>
+        <script>
+            let worad = "Hello my G";
+            document.getElementById("demos").innerHTML = worad + " is a " + worad.length + " letter statement";
+        </script>
+
+
+        <p id="demo"></p>
+        <p id="onsss"></p>
+        <script>
+            let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            document.getElementById("demo").innerHTML = text;
+
+            //Let's create a string that has quotes, both double and single
+            let testss = "Let\'s see if this quote will be there \"for us\"";
+            document.getElementById('onsss').innerHTML = testss;//Correct
+
+        </script>
+    </div>
+</body>
+</html>
