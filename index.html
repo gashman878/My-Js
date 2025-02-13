@@ -68,6 +68,79 @@
 
         //These data can be displayed by calling JSON.stringify(name of the object)
         </script>
+
+        <p id="onGod"></p>
+        
+        <script>
+            //To Create javascript object contructor:
+            // 1. Create a function and add some properties without values inside the function bracket
+            // 2. Use this.propertyname to assign names to the properties
+            // 3. Use const to create a new object out of that for as many objects as possible
+            // Let's try it!
+
+            function Car(name, year, color, engine) {
+                this.carname = name;
+                this.releaseYear = year;
+                this.color = color;
+                this.modelEngine = engine;
+            }
+
+            const myCar = new Car("Lexus", "2024", "Black", "V6");
+            const friendCar = new Car("Toyota", "2023", "Red", "V4");
+            // You can create for as many objects as possible here
+
+            // Now let's display or make a sentence out of this
+            document.getElementById('onGod').innerHTML = 
+            "The color of my " + myCar.carname + " is " + myCar.color + " and" + " friends own is " + friendCar.color + " .";
+
+            //Properties and values can be added at anytime, just call the objectname.property and assign value
+
+        </script>
+
+
+
+        <p id="dad"></p>
+        <script>
+            //You can create a function that can make it easier for you to call more than a value at once
+            //Let's try!
+            function person(fname, lname, color) {
+              this.firstName = fname;
+              this.lastName = lname;
+              this.color = color;
+              this.fullName = function() {
+                return this.firstName + " " + this.lastName
+              };
+            }
+
+            //Now create an object for person
+            const myFather = new person("Magnus", "Agashi", "Black");
+
+            document.getElementById("dad").innerHTML =
+            "My father's full name is " + myFather.fullName();
+        </script>
+
+        <p id="demo"></p>
+
+        <script>
+        // Constructor Function for Person objects
+        function Person(first, last, age, eye) {
+          this.firstName = first;
+          this.lastName = last;
+          this.age = age;
+          this.eyeColor = eye;
+          this.fullName = function() {
+            return this.firstName + " " + this.lastName
+          };
+        }
+        
+        // Create a Person object
+        const myFathe = new Person("John", "Doe", 50, "blue");
+        
+        // Display full name
+        document.getElementById("demo").innerHTML =
+        "My father is " + myFathe.fullName(); 
+        
+        </script>
     </div>
 </body>
 </html>
