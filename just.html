@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Practice</title>
+</head>
+<body>
+    <div>
+        <p id="one"></p>
+        <p id="two"></p>
+        <p id="three"></p>
+        <p id="four"></p>
+        <p id="five"></p>
+        <p id="six"></p>
+        <p id="seven"></p>
+        <p id="eight"></p>
+        <p id="nine"></p>
+        <p id="ten"></p>
+    </div>
+    <script>
+        // .indexOf() is used to pull the number where a word is located in a string
+        let onens= "Please I\'m tired of all this rubbish this is ";
+        document.getElementById('one').innerHTML = onens.indexOf("this");
+
+        // .search() does the same job
+        // .lastIndexOf() is used to pull the number where a word is located last in a string
+        // The both accepts a second parameter as where it starts running
+
+        // .match(//g) will search for a word in a string and display how may times it appeared
+        document.getElementById('two'). innerHTML = onens.match(/is/g);
+        //If yuo don't include the g, it will return it only once
+
+
+        // .includes() returns true or false if the specified word is in the string
+        document.getElementById('three'). innerHTML = onens.includes('tired');
+        // you can include a second parameter if you want the search to start from/be done at that point
+
+        // .startWith() checks if a string starts with a particular value
+        // a start position can be specified in the bracket
+        // There is also .endWith(), you already know how it works and vice-versa
+
+        // There is Javascript Template Strings, which looks like this ``. It makes concatenation easier
+        let ijeid = "Magnus";
+        let iijdo = "Agashi";
+        let Funame = `Welcome ${ijeid} ${iijdo}!`;
+
+        document.getElementById('four').innerHTML = Funame;
+        // You can see how I didn't have to use + and "" to join the strings
+
+        //If you try a js arithmetic operation with a string, it will return Nan "Not a number"
+        // .isNaNS() can be used to determine is a string is a number or not. It will return true or false. Just put the string name inside the ()
+
+        // In Js there number can be too long to store in a string, 16 digits max. There is way to stored a number longer than that
+        // You can use BigInt to add it, just n at the end of the number, chikina
+        </script>
+
+    
+</body>
+</html>
