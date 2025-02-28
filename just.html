@@ -17,6 +17,16 @@
         <p id="eight"></p>
         <p id="nine"></p>
         <p id="ten"></p>
+        <p id="eleven"></p>
+        <p id="twelve"></p>
+        <p id="thirteen"></p>
+        <p id="fourteen"></p>
+        <p id="fifteen"></p>
+        <p id="sixteen"></p>
+        <p id="seventeen"></p>
+        <p id="eighteen"></p>
+        <p id="nineteen"></p>
+        <p id="twenty"></p>
     </div>
     <script>
         // .indexOf() is used to pull the number where a word is located in a string
@@ -53,7 +63,60 @@
 
         // In Js there number can be too long to store in a string, 16 digits max. There is way to stored a number longer than that
         // You can use BigInt to add it, just n at the end of the number, chikina
-        </script>
+
+        let first = 9999999999999999;
+        let second = 9999999999999999n;
+        
+        document.getElementById('five').innerHTML = `This is 16 nines without BigInt ${first}  <br> This is 16 nines with BigInt ${second}`;
+        //You can use the typeof() method the check if a variable is a BigInt
+        //You can also use the Number.isInteger() and Number.isSafeIntegar() to find if a number is an integer
+        // Mathemaics arithmetics can't be carried out between BigInt and a number. Sadly!
+        // Inshort, a BigInt cannot be a decimal
+
+        // Here are some number methods that can be used with numbers
+        // .toString() converts a number to a string
+        // .toFixed() rounds a digit to a certain number of decimals
+        // .toPrecision() returns a number in a specific lenght
+        // .valueOf() returns a number as a number. Lol 
+        let a = 123;
+        let b = 13.433;
+        let c = 12.3;
+        document.getElementById('six').innerHTML = a.toString() +  "<br>" + b.toFixed(2) + "<br>" + c.toPrecision(4);
+        // In this case, a is expected to remain the same. b is expected to be 13.43 and c is expected to be 12.30
+
+        // ARRAYS 
+        // It's simply creating many variables with just one name.
+        const cars = ["Toyota", "Lexus", "Mercedes", "Rolls Royce"];
+        document.getElementById('seven').innerHTML = "The car brands I like are: " + cars[0] + " and " + cars[3] + ".";
+        // You can change the value of a the arrays
+        cars[1] = "Volvo"; // This will change the that Lexus to Volvo
+
+        // You can have access to the full array
+        document.getElementById('eight').innerHTML = cars;
+
+        // You can covert the entire array to a string.
+        document.getElementById('nine').innerHTML = cars.toString();
+
+        // Popping and pushing
+        // pop() removes the last variable/value of an array
+        document.getElementById('ten').innerHTML = cars.pop();// This returns the removed value. If you call the entire array again, it wont be there
+
+        // push() adds an item to an array
+        cars.push("Rolls Roysss")
+        document.getElementById('eleven').innerHTML=cars;
+
+        // shift() is the same as pop() but it works for the first item instead of the last one
+        // unShift() is the opposite of shift() just like Push()
+
+        //concat() can create a new array by merging existing arrays
+        const newcars = ["Range", "McLaren", "Aston Martins"];
+
+        //Now let's merge and see
+        const allcars = cars.concat(newcars);
+        document.getElementById('twelve').innerHTML=allcars;
+        // You can merge more than one array, just add all the array names inside the concat() bracket
+
+    </script>
 
     
 </body>
