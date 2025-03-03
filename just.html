@@ -24,9 +24,22 @@
         <p id="fifteen"></p>
         <p id="sixteen"></p>
         <p id="seventeen"></p>
+        <button type="button" onclick="alphabetic()">Click to sort alphabetically</button>
+        <button type="button" onclick="numeric()">Click to sort numerically</button>
+        <button type="button" onclick="random()">Click to sort Randon</button>
         <p id="eighteen"></p>
         <p id="nineteen"></p>
         <p id="twenty"></p>
+        <p id="twentyone"></p>
+        <p id="twentytwo"></p>
+        <p id="twentythree"></p>
+        <p id="twentyfour"></p>
+        <p id="twentyfive"></p>
+        <p id="twentysix"></p>
+        <p id="twentyseven"></p>
+        <p id="twentyeight"></p>
+        <p id="twentynine"></p>
+        <p id="thirty"></p>
     </div>
     <script>
         // .indexOf() is used to pull the number where a word is located in a string
@@ -115,6 +128,101 @@
         const allcars = cars.concat(newcars);
         document.getElementById('twelve').innerHTML=allcars;
         // You can merge more than one array, just add all the array names inside the concat() bracket
+
+        // The indexof() method searches for an item inside an array and returns its position.
+        document.getElementById('thirteen').innerHTML= allcars.indexOf("Range");
+        // You can add a second parameter/number to the bracket, it will start searching from there
+        // The lastIndexof() methos does the same thing, just that it returns the position of the last occurence of the specified item
+
+        // The includes() method checks if an item is present in an array and returns true if is.
+        document.getElementById('fourteen').innerHTML = allcars.includes("Volkswagen"); // This case will return false cos there is no volksvagen in my allcars array
+
+        // The find() method returns the first item of an array that passes a function test
+        const numbers = [3,4,77,21,12,27,98];
+        let trial = numbers.find(firstF);
+        function firstF(value, index, array) {
+            return value > 40;
+        }
+        document.getElementById('fifteen').innerHTML = "First number greater than 40 is " + trial;
+
+        // .sort() method sorts an array alphabetically
+        allcars.sort();
+        document.getElementById('sixteen').innerHTML = "These are my cars in alphabetical order: " + allcars;
+        // .reverse() method reverses the array to how it was before it was sorted
+        // .toSorted() method creates a new array and arranges it in alphabetical order
+        // .toreverse() method reverses the toSorted() and creates a new array for it.
+
+        // Now let's try and sort numbers let's see.
+        document.getElementById('seventeen').innerHTML = numbers;
+        function alphabetic() {
+            numbers.sort();
+            document.getElementById('seventeen').innerHTML = numbers;
+        } // This sorts the numbers alphabetically
+
+        function numeric() {
+            numbers.sort(function(a, b) {
+                return a - b
+            });
+            document.getElementById('seventeen').innerHTML = numbers;
+        } // This sorts the numbers numerically
+
+        function random() {
+            numbers.sort(function () {
+                return 0.5 - Math.random()
+            });
+            document.getElementById('seventeen').innerHTML = numbers;
+        } // This sors the numbers at random
+
+
+        //forEach() method calls a function for each item in an array
+        let number = "";
+        numbers.forEach(secondfunction);
+        function secondfunction(value, index, array) {
+            number += value + "<br>";
+        } // This simply calls every item of an array for a single line
+        document.getElementById('eighteen').innerHTML = number;
+        
+
+        // .map() creates a new array from an existing array by perfomring a home function on them.
+        const numbers2 = numbers.map(thirdfunction);
+        function thirdfunction(value, index, array) {
+            return value * 3;
+        } // This multiply every item of an array by 3
+        document.getElementById('nineteen').innerHTML = numbers2;
+
+
+        // .filter() method creates a new array for an array item that passes a function
+        const numbers3 = numbers.filter(fourtfunction);
+        function fourtfunction(value, index, array) {
+            return value > 10;
+        }  // This returns an array with items greater than 10 
+        document.getElementById('twenty').innerHTML = numbers3;
+
+        
+        // .reduce() runs a function that adds up all the items of an array
+        let numbers4 = numbers.reduce(fiftfunction);
+        function fiftfunction(total, value, index, array) {
+            return total + value;
+        }
+        document.getElementById('twentyone').innerHTML = "The sum of the entire numbers in my array is: " + numbers4;
+        // .reduceRight() almost does the samething, I haven't seen much difference
+
+
+        // .every() checks if all items of an array passes a test, it return true or false
+        let numbers5 = numbers.every(sixtfunction);
+        function sixtfunction(value, index, array) {
+            return value > 60;
+        }
+        document.getElementById('twentytwo').innerHTML = "All the items of the numbers array are greater than 60 ? " + numbers5;
+
+
+        // .some() checks if some items of an array passes a test, it returns true or false
+        let numbers6 = numbers.some(sixtfunction);
+        function seventfunction(value, index, array) {
+            return value > 60;
+        }
+        document.getElementById('twentythree').innerHTML = "Some of the items of the numbers array are greater than 60 ? " + numbers6;
+
 
     </script>
 
