@@ -6,6 +6,43 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <p id="one"></p>
+    <p id="two"></p>
+    <p id="three"></p>
+    <p id="four"></p>
+    <p id="five"></p>
+    <p id="six"></p>
+    <p id="seven"></p>
+    <p id="eight"></p>
+    <p id="nine"></p>
+    <p id="ten"></p>
+    <p id="eleven"></p>
+    <p id="twelve"></p>
+    <p id="thirteen"></p>
+    <p id="fourteen"></p>
+    <p id="fifteen"></p>
+    <p id="sixteen"></p>
+    <p id="seventeen"></p>
+    <p id="eighteen"></p>
+    <p id="nineteen"></p>
+    <p id="twenty"></p>
+
+    <script>
+        let today = new Date(); // This can also be declared by using: const today = new Date(). Infact, you can remove the new and everything will still be fine
+        document.getElementById('one').innerHTML = "Today's date and time is: " + today;
+
+        // You can create a specific date by adding the date parameters
+        let today1 =  new Date("February 4, 2020 11:13:00");
+        document.getElementById('two').innerHTML = "My depression started on : " + today1;
+        
+        // You can add seven parameters specifying: year, month, day, hour, minute, second and millisecond(In this order)
+        // The months number starts counting from 0-11, instead of 1-12
+        let today2 = new Date(2000, 1, 4, 12, 16, 1, 0);
+        document.getElementById('three').innerHTML = "Dey gave birth to me on :" + today2;
+
+        // .toUTCString() converts a date to UTC standard.
+        let today3 = today2.toUTCString();
+        document.getElementById('four').innerHTML = "This is the UTC format of a date: " + today3;
+    </script>
 </body>
 </html>
