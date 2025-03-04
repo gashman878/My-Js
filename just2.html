@@ -22,10 +22,32 @@
     <p id="fourteen"></p>
     <p id="fifteen"></p>
     <p id="sixteen"></p>
+    <p>This is an inter-house sports, if you are 18 and above, you can't participate.</p>
+    <input type="text" name="" id="age"> <button type="button" onclick="firstfunction()">Submit your Age</button>
     <p id="seventeen"></p>
     <p id="eighteen"></p>
     <p id="nineteen"></p>
     <p id="twenty"></p>
+    <p id="twenty-one"></p>
+    <p id="twenty-two"></p>
+    <p id="twenty-three"></p>
+    <p id="twenty-four"></p>
+    <p id="twenty-five"></p>
+    <p id="twenty-six"></p>
+    <p id="twenty-seven"></p>
+    <p id="twenty-eight"></p>
+    <p id="twenty-nine"></p>
+    <p id="thirty"></p>
+    <p id="thirty-one"></p>
+    <p id="thirty-two"></p>
+    <p id="thirty-three"></p>
+    <p id="thirty-four"></p>
+    <p id="thirty-five"></p>
+    <p id="thirty-six"></p>
+    <p id="thirty-seven"></p>
+    <p id="thirty-eight"></p>
+    <p id="thirty-nine"></p>
+    <p id="forty"></p>
 
     <script>
         let today = new Date(); // This can also be declared by using: const today = new Date(). Infact, you can remove the new and everything will still be fine
@@ -91,7 +113,67 @@
         // Math.random() returns a number between 0 and 1. 
         document.getElementById('sixteen').innerHTML = "Okay, here is random number: " + Math.random(); // It always returns a number lower than 1
 
-        // L
+        // Let's try a basic comparison
+        function firstfunction() {
+            let age = document.getElementById('age').value;
+            let toparticipate = (age < 18) ? "Young enough" : "Too old";
+            document.getElementById('seventeen').innerHTML = toparticipate + " to participate.";
+        }
+
+        // The ??(Nullish Coalescing) operator is used to make a choice between two options. 
+        // It returns the first one, but it will return the second one id the first one is null or undefined
+        let firstname = "Gashman";
+        let secondname = "Gustavo";
+        let anyname = firstname ?? secondname;
+        document.getElementById('eighteen').innerHTML = "My nickname is " + anyname; // This case will return Gashman
+
+        let fistname = null;
+        let secndname = "Gustavo";
+        let anynme = fistname ?? secndname;
+        document.getElementById('nineteen').innerHTML = "My nickname is also " + anynme; // This case will return Gustavo
+
+        // The ?. (Optional Chaining) operator returns undefined if there is a missing item instead of throwing an error
+        const car = {type:"Toyota", color:"Black"};
+        let carname = car?.name;
+        document.getElementById('twenty').innerHTML = "The name of my car is " + car.name; // This returns 'undefined' instead of throwing error
+
+        // If statement
+        let time = new Date().getHours();
+        if (time < 12) {
+            document.getElementById('twenty-one').innerHTML = "Good Morning";
+        } else if(time > 12 && time < 16){
+            document.getElementById('twenty-one').innerHTML = "Good Afternoon";
+        } else if(time > 16 && time < 20){
+            document.getElementById('twenty-one').innerHTML = "Good Evening";
+        }else{
+            document.getElementById('twenty-one').innerHTML = "Good Night";
+        }
+
+        // Switch statement
+        let text;
+        let day = new Date().getDay();
+        switch (day) {
+            case 0:
+                text = "Today is Sunday";
+                break;
+            case 1:
+                text = "Today is Monday";
+                break;
+            case 2:
+                text = "Today is Tuesday";
+                break;
+            default:
+                text = "I don't know what today is";
+        }
+        document.getElementById('twenty-two').innerHTML = text;
+
+        // Let's see how loops works
+        let texts = "";
+        for (let i = 0; i <= 5; i++) {
+        texts += "The number is " + i + "<br>";
+        }
+
+        document.getElementById("twenty-three").innerHTML = texts;
     </script>
 </body>
 </html>
