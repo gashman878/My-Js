@@ -43,6 +43,55 @@
         // .toUTCString() converts a date to UTC standard.
         let today3 = today2.toUTCString();
         document.getElementById('four').innerHTML = "This is the UTC format of a date: " + today3;
+
+        // .getFullYear() method returns only the year from a date.
+        let thisyear = today.getFullYear();
+        document.getElementById('five').innerHTML = "We are in: " + thisyear + ".";
+
+        // .getMonth() method returns only the month from a date.
+        let thismonth = today.getMonth();
+        document.getElementById('six').innerHTML = "The month is: " + thismonth + "."; // This returned the number of the month and not the name
+        // If you want to return the name of the month and not the number, create an array of all the months and call it from there
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        let thismonth1 = months[today.getMonth()];
+        document.getElementById('seven').innerHTML = thismonth1;
+
+        // .getDate() returns the day
+        // .getHours() returns the hour
+        // .getMinutes() returns the minutes
+        // .getSeconds() returns the seconds
+        // .getMilliseconds() returns the milliseconds
+        // These methods will return numbers, you can use the array style to get the name.
+        // You can add .set in front of these methods and the will be able to change the value of an existing date.
+
+
+        document.getElementById('eight').innerHTML = "PI is equal to: " + Math.PI; // This is for Pi, let's try other maths methods
+
+        // Math.round(x) returns the value of x rounded to it's nearest integer
+        document.getElementById('nine').innerHTML = "The nearest integer to 5.5 is: " + Math.round(5.5); // This returns 6
+
+        // Math.ceil(x) returns the value of x rounded to it's nearest integer without going back.
+        document.getElementById('ten').innerHTML = "The nearest integer to 9.3 without going back is: " + Math.ceil(9.3); // This returns 10
+
+        // Math.floor(x) returns the value of x rounded to it's nearest integer without going up
+        document.getElementById('eleven').innerHTML = "The nearest integer to 11.8 without going up is: " + Math.floor(11.8); // This returns 11
+
+        // Math.trunc(x) returns the integer part of x
+        document.getElementById('twelve').innerHTML = "The integer part of 43.15 is: " + Math.trunc(43.15) + " while that of 30.91 is: " + Math.trunc(30.91);
+
+        // Math.pow(x, y) returns x raised to power y
+        document.getElementById('thirteen').innerHTML = "13 raised to the power of 3 is: " + Math.pow(13, 3);
+
+        // Math.sqrt(x) returns the squre root of x
+        document.getElementById('fourteen').innerHTML = "The square root of 54390 is: " + Math.sqrt(54390);
+
+        // Math.abs(x) returns the absolute(positive) value of x
+        document.getElementById('fifteen').innerHTML = "The absolute positive value of '-15' is: " + Math.abs(-15);
+
+        // Math.random() returns a number between 0 and 1. 
+        document.getElementById('sixteen').innerHTML = "Okay, here is random number: " + Math.random(); // It always returns a number lower than 1
+
+        // L
     </script>
 </body>
 </html>
