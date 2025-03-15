@@ -167,13 +167,22 @@
         }
         document.getElementById('twenty-two').innerHTML = text;
 
-        // Let's see how loops works
+        // Let's see how loops works - Lops for
         let texts = "";
         for (let i = 0; i <= 5; i++) {
         texts += "The number is " + i + "<br>";
         }
 
         document.getElementById("twenty-three").innerHTML = texts;
+
+        // 'For of' statement loops through an object or an array
+        const cars = ["BMW", "Audi", "Mercedes"];
+        let carlist = "";
+        for(let x of cars){
+            carlist += x + "<br>";
+        }
+        document.getElementById('twenty-four').innerHTML = carlist;
+
     </script>
 </body>
 </html>
