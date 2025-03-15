@@ -39,7 +39,39 @@
 
 
     <script>
-        
+        // Let's start how to create a set from an array
+        const schools = new Set(["Futo", "UNN", "Unizik", "Funai"]);
+        document.getElementById('one').innerHTML = "I have a set of schools. The set is made up of " + schools.size + " schools.";
+
+        // You can create an empty set and add the values later
+        const friends = new Set();
+        friends.add("Festfix");
+        friends.add("Abugu");
+        document.getElementById('two').innerHTML = "Just created an empty set and added the values with the .add() method. The set contains " + friends.size + " values.";
+
+        // You can add varibles to sets too
+        let var1 = "Come";
+        let var2 = "Please";
+        let var3 = "Accept";
+
+        const varibles = new Set();
+        varibles.add(var1);
+        varibles.add(var2);
+        varibles.add(var3);
+        document.getElementById('three').innerHTML = "Created a Set and added variables to it. It contains " + varibles.size + " values";
+
+        // Let's list the values of the first set which is school
+        let schoolslist = "";
+        for(const x of schools){
+            schoolslist += x + "<br>";
+        }
+        document.getElementById('four').innerHTML = "Iterating the school set, we have: " + "<br>" + schoolslist;
+
+        // Some sets methods
+        // .has() returns true or false if a set contains a specidied value. The value will be specified in the bracket of the .has()
+
+
+
     </script>
 </body>
 </html>
