@@ -183,6 +183,52 @@
         }
         document.getElementById('twenty-four').innerHTML = carlist;
 
+        // Let's practice Js Iterables(Can be used to loop through a string or an array)
+        const letters = ["Biscuit", "Bone", "Meet", "Fish"];
+        let food = "";
+        for (const x of letters){
+            food += x + "<br>";
+        }
+        document.getElementById('twenty-five').innerHTML = food;
+        // This is how iterables work, it works this same way for strings
+
+
+        // Let's try a home made iterable, it adds up a specified figure each time it's been called.
+        function secondfunction() {
+            let n = 0;
+            return {
+                next: function(){
+                    n += 13;
+                    return{value:n, done:false};
+                }
+            };
+        }
+        const n =secondfunction();
+        n.next();
+        document.getElementById('twenty-six').innerHTML = n.next().value + 
+        ". This shows 26 cos its a home-made iterable that adds 13 each time its been mentioned and this is the second mention"; 
+        // This should show 26 cos its a homade iterable that adds 13 each time its been called. 
+
+
+        // Let's make an object iterable
+        firstOb = {} //creates an object
+        firstOb[Symbol.iterator] = function(){
+            let f = 0;
+            done = false;
+            return{
+                next(){
+                    f += 10;
+                    if(f == 100){done = true}
+                    return{value:f, done:done};
+                }
+            };
+        }
+
+        let fuck = "";
+        for (const num of firstOb){
+            fuck += num + "<br>"
+        }
+        document.getElementById('twenty-seven').innerHTML = fuck + "This is an iterable of object";
     </script>
 </body>
 </html>
