@@ -71,6 +71,43 @@
         // .has() returns true or false if a set contains a specidied value. The value will be specified in the bracket of the .has()
 
 
+        // JS Maps - Holds key-value pairs where the key could be any data type. It also remembers the original insertion order of the keys
+        const fruit = new Map([
+            ["apple", 500]
+            ["mangoes", 300]
+            ["oranges", 250]
+        ]);
+        let numbs = fruit.get("apple");
+        document.getElementById('five').innerHTML = "There are " + numbs + " apples in the fridge";
+
+        // Create a Map
+        const fruits = new Map([
+        ["apples", 500],
+        ["bananas", 300],
+        ["oranges", 200]
+        ]);
+
+        let numb = fruits.get("apples");
+        document.getElementById("six").innerHTML = "There are " + numb + " apples.";
+        // These map examples are not working and I don't know why. Let's continue shaa
+
+
+        // Js Destructuring - breaking down an object so that it can be called just like a variable
+        // Create an Object
+        const person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50
+        };
+
+        // Destructuring
+        let {firstName, lastName, age} = person;
+
+        // Display Primitive Values
+        document.getElementById("seven").innerHTML =
+        firstName + " " + lastName + " is " + age + " years";
+        // This example didn't work again, the problem could be from my vscode!
+
 
     </script>
 </body>
