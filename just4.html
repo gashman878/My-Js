@@ -9,7 +9,18 @@
     <input id="demo" type="text">
     <button type="button" onclick="myFunction()">Test Input</button>
     <p id="p01"></p>
+    <p id="first_try">This is a trial text</p>
+    <p>This is a trial for the getElementById in DOM</p>
+    <div id="on_God">
+        <p class="intro">This is the first catch</p>
+        <p class="intro">This is the second catch</p>
+    </div>
 
+    <form action="#" id="first_form">
+        First Name: <input type="text" value="Victor"><br>
+        Second Name: <input type="text" value="Agashi"><br>
+        <input type="button" value="Submit">
+    </form>
     <p id="one"></p>
     <p id="two"></p>
     <p id="three"></p>
@@ -17,6 +28,15 @@
     <p id="five"></p>
     <p id="six"></p>
     <p id="seven"></p>
+
+    <img id="first_image" src="Images/one.jpg" alt="" style="height: 300px; width: 200px;">
+
+    <h4>The form must not be submitted empty</h4>
+    <form action="" method="post" name="second_form" onsubmit="return validateForm()">
+        Name: <input type="text" name="first_name">
+        <input type="submit" value="Submit">
+    </form>
+    <br><br>
     <p id="eight"></p>
     <p id="nine"></p>
     <p id="ten"></p>
@@ -74,11 +94,48 @@
     document.getElementById("one").innerHTML = person.fullName();
 
     // Arrow function - This allows us write shorter function syntax
-    let firstfunction(a,b) => a * b;
+    let firstfunction = (a, b) => a * b;
     document.getElementById('two').innerHTML = firstfunction(4, 6);
 
-    let myname = "Agashi Victor Tochukwu";
-    document.getElementById('three').innerHTML = myname;
+    // Trying the first DOM -How to find a html element by the Id
+    let first_try = document.getElementById('first_try');
+    document.getElementById('three').innerHTML = "The text from that paragraph is: " + first_try.innerHTML;
+
+    // Let's try to catch a html element by the tags
+    const second_try = document.getElementsByTagName("p");
+    document.getElementById('four').innerHTML = "This is a text from the DOM of: " + second_try[2].innerHTML;
+
+    const third = document.getElementById('on_God');
+    const fourth = third.getElementsByTagName("p");
+
+    document.getElementById('five').innerHTML = "This is another text: " + fourth[1].innerHTML;
+
+    
+    // Let's try to cach a html element by the query selectors
+    const fifth = document.querySelectorAll("p.intro");
+    document.getElementById('six').innerHTML = "This first paragraph with the clas intro says: " + fifth[0].innerHTML;
+
+
+    // Let's try how to get out inputs of a form
+    const sixth = document.forms["first_form"];
+    let seventh = "";
+    for (let i = 0;  i < sixth.length; i++) {
+        seventh += sixth.elements[i].value + "<br>";
+    }
+    document.getElementById("seven").innerHTML = seventh;
+
+    // Let's try how to get and change the value of an image
+    document.getElementById('first_image').src = "Images/nine.jpg"
+
+
+    // Let's validate a form for emptiness
+    function validateForm() {
+        let x = document.forms["second_form"]["first_name"].value;
+        if (x == "") {
+            alert ("Oga enter your name there");
+        }
+    }
+    // Or you can simply add a required attribute to the input field and the browser will make it compulsory to not leave it emmpty. 
 
     </script>
 </body>
