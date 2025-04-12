@@ -37,7 +37,8 @@
         <input type="submit" value="Submit">
     </form>
     <br><br>
-    <p id="eight"></p>
+    <h3>Let's practice how to send data to json and how to get it back. The text below was sent and retrieved</h3>
+    <p id="eight"></p><br><br><b></b>
     <p id="nine"></p>
     <p id="ten"></p>
     <p id="eleven"></p>
@@ -136,6 +137,19 @@
         }
     }
     // Or you can simply add a required attribute to the input field and the browser will make it compulsory to not leave it emmpty. 
+
+
+    // Let's try Json
+    // First. Storing data in json
+    const eight = {name: "John", age: 31, city: "New York" };
+    const nine = JSON.stringify(eight);
+    localStorage.setItem("testJSON", nine);
+
+    //Second. Let's retrieve the data
+    const ten = localStorage.getItem("testJSON");
+    const eleven = JSON.parse(ten);
+    document.getElementById("eight").innerHTML = "The name I saved and retrieved is: " + eleven.name;
+
 
     </script>
 </body>
